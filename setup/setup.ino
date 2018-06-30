@@ -87,7 +87,7 @@ void loop(){
     Serial.println(receiver_input_channel_1);
     Serial.print(F("Digital input 52 = "));
     Serial.println(receiver_input_channel_2);
-    Serial.print(F("Digital input 52 = "));
+    Serial.print(F("Digital input 51 = "));
     Serial.println(receiver_input_channel_3);
     Serial.print(F("Digital input 50 = "));
     Serial.println(receiver_input_channel_4);
@@ -599,21 +599,29 @@ void check_receiver_inputs(byte movement){
       trigger = 1;
       receiver_check_byte |= 0b00000001;
       pulse_length = receiver_input_channel_1;
+      Serial.print("CH1 Pulse Length")
+      Serial.println(receiver_input_channel_1);
     }
     if(receiver_input_channel_2 > 1750 || receiver_input_channel_2 < 1250){
       trigger = 2;
       receiver_check_byte |= 0b00000010;
       pulse_length = receiver_input_channel_2;
+      Serial.print("CH2 Pulse Length")
+      Serial.println(receiver_input_channel_2);
     }
     if(receiver_input_channel_3 > 1750 || receiver_input_channel_3 < 1250){
       trigger = 3;
       receiver_check_byte |= 0b00000100;
       pulse_length = receiver_input_channel_3;
+      Serial.print("CH3 Pulse Length")
+      Serial.println(receiver_input_channel_3);
     }
     if(receiver_input_channel_4 > 1750 || receiver_input_channel_4 < 1250){
       trigger = 4;
       receiver_check_byte |= 0b00001000;
       pulse_length = receiver_input_channel_4;
+      Serial.print("CH4 Pulse Length")
+      Serial.println(receiver_input_channel_4);
     } 
   }
   if(trigger == 0){
